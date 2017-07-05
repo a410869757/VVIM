@@ -1,25 +1,26 @@
 set number 
 set numberwidth=2
-au GUIEnter * call libcallnr("vimtweak.dll", "SetAlpha", 200)   "×Ô¶¯Í¸Ã÷
-
+"au GUIEnter * call libcallnr("vimtweak.dll", "SetAlpha", 200)   "è‡ªåŠ¨é€æ˜
+set ts=4
+set expandtab 
 set encoding=utf-8
 set langmenu=zh_CN.UTF-8
-" ÉèÖÃ´ò¿ªÎÄ¼şµÄ±àÂë¸ñÊ½  
+" è®¾ç½®æ‰“å¼€æ–‡ä»¶çš„ç¼–ç æ ¼å¼  
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1 
 set fileencoding=utf-8
-"------------------------------------------------------------------------------------airline×´Ì¬À¸
-"½â¾ö²Ëµ¥ÂÒÂë
+"------------------------------------------------------------------------------------airlineçŠ¶æ€æ 
+"è§£å†³èœå•ä¹±ç 
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 language messages zh_CN.utf-8 
-"ÉèÖÃÖĞÎÄ°ïÖú
+"è®¾ç½®ä¸­æ–‡å¸®åŠ©
 set helplang=cn
-"ÉèÖÃÎªË«×Ö¿íÏÔÊ¾£¬·ñÔòÎŞ·¨ÍêÕûÏÔÊ¾Èç:¡î
+"è®¾ç½®ä¸ºåŒå­—å®½æ˜¾ç¤ºï¼Œå¦åˆ™æ— æ³•å®Œæ•´æ˜¾ç¤ºå¦‚:â˜†
 set ambiwidth=double
-set laststatus=2 "×´Ì¬À¸²å¼ş
-let g:airline#extensions#tabline#enabled = 1       "tablineÖĞµ±Ç°bufferÁ½¶ËµÄ·Ö¸ô×Ö·û
-let g:airline#extensions#tabline#left_sep = ' '     "tablineÖĞÎ´¼¤»îbufferÁ½¶ËµÄ·Ö¸ô×Ö·û
-let g:airline#extensions#tabline#left_alt_sep = '|'  "tablineÖĞbufferÏÔÊ¾±àºÅ
+set laststatus=2 "çŠ¶æ€æ æ’ä»¶
+let g:airline#extensions#tabline#enabled = 1       "tablineä¸­å½“å‰bufferä¸¤ç«¯çš„åˆ†éš”å­—ç¬¦
+let g:airline#extensions#tabline#left_sep = ' '     "tablineä¸­æœªæ¿€æ´»bufferä¸¤ç«¯çš„åˆ†éš”å­—ç¬¦
+let g:airline#extensions#tabline#left_alt_sep = '|'  "tablineä¸­bufferæ˜¾ç¤ºç¼–å·
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 nnoremap [b :bp<CR>
@@ -30,41 +31,41 @@ set nocompatible
 filetype off                  
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-"-----------------------------------------------------------------------------------²å¼ş°²×°
+"-----------------------------------------------------------------------------------æ’ä»¶å®‰è£…
 
-Plugin 'VundleVim/Vundle.vim'             "-- ²å¼ş¹ÜÀí
-Plugin 'bling/vim-airline'                "-- ×´Ì¬À¸²å¼ş
-Plugin 'altercation/vim-colors-solarized' "-- ÑÕÉ«Ö÷Ìâ
-Plugin 'tomasr/molokai'                   "-- ÑÕÉ«Ö÷Ìâ
-Plugin 'ctrlpvim/ctrlp.vim'               "-- CTRLP[ÎÄ¼şËÑË÷]
-Plugin 'tacahiroy/ctrlp-funky'            "-- Ä£ºıËÑË÷µ±Ç°ÎÄ¼şÖĞËùÓĞº¯Êı
-Plugin 'scrooloose/nerdcommenter'         "-- ¿ìËÙ¸ßĞ§×¢ÊÍ
-Plugin 'mattn/emmet-vim.git'              "-- Ğ´HTML²å¼ş
-Plugin 'bronson/vim-trailing-whitespace'  "-- TRAILING-WHITESPACE[ĞĞÎ²¿Õ¸ñ´¦Àí]
-Plugin 'thinca/vim-quickrun'              "-- QUICKRUN[¿ìËÙÖ´ĞĞ]
-Plugin 'docunext/closetag.vim'            "-- CLOSETAG[³É¶Ô±êÇ©²¹È«]
-Plugin 'terryma/vim-expand-region'        "-- ÊÓÍ¼Ä£Ê½ÏÂ¿ÉÉìËõÑ¡ÖĞ²¿·Ö£¬ÓÃÓÚ¿ìËÙÑ¡ÖĞÄ³Ğ©¿é
-Plugin 'w0rp/ale'                         "-- Óï·¨¼ì²é
-Plugin 'kshenoy/vim-signature'            "-- ¿ìËÙ±ê¼ÇÌø×ª ÎŞ±à¼­
-Plugin 'terryma/vim-multiple-cursors'     "-- ¶à¹â±ê²Ù×÷
-Plugin 'junegunn/vim-easy-align'          "-- EASY-ALIGN[¿ìËÙ¶ÔÆë]
-Plugin 'vim-scripts/matchit.zip'          "-- MATCHIT[³É¶Ô±êÇ©Ìø×ª]  ÎŞ±à¼­
-Plugin 'Raimondi/delimitMate'             "-- DELIMITMATE[·ûºÅ×Ô¶¯²¹È«]
-Plugin 'kien/rainbow_parentheses.vim'  "-- À¨ºÅ¸ßÁÁ
-Plugin 'scrooloose/nerdtree'             "-- Ä¿Â¼Ê÷
+Plugin 'VundleVim/Vundle.vim'             "-- æ’ä»¶ç®¡ç†
+Plugin 'bling/vim-airline'                "-- çŠ¶æ€æ æ’ä»¶
+Plugin 'altercation/vim-colors-solarized' "-- é¢œè‰²ä¸»é¢˜
+Plugin 'tomasr/molokai'                   "-- é¢œè‰²ä¸»é¢˜
+Plugin 'ctrlpvim/ctrlp.vim'               "-- CTRLP[æ–‡ä»¶æœç´¢]
+Plugin 'tacahiroy/ctrlp-funky'            "-- æ¨¡ç³Šæœç´¢å½“å‰æ–‡ä»¶ä¸­æ‰€æœ‰å‡½æ•°
+Plugin 'scrooloose/nerdcommenter'         "-- å¿«é€Ÿé«˜æ•ˆæ³¨é‡Š
+Plugin 'mattn/emmet-vim.git'              "-- å†™HTMLæ’ä»¶
+Plugin 'bronson/vim-trailing-whitespace'  "-- TRAILING-WHITESPACE[è¡Œå°¾ç©ºæ ¼å¤„ç†]
+Plugin 'thinca/vim-quickrun'              "-- QUICKRUN[å¿«é€Ÿæ‰§è¡Œ]
+Plugin 'docunext/closetag.vim'            "-- CLOSETAG[æˆå¯¹æ ‡ç­¾è¡¥å…¨]
+Plugin 'terryma/vim-expand-region'        "-- è§†å›¾æ¨¡å¼ä¸‹å¯ä¼¸ç¼©é€‰ä¸­éƒ¨åˆ†ï¼Œç”¨äºå¿«é€Ÿé€‰ä¸­æŸäº›å—
+Plugin 'w0rp/ale'                         "-- è¯­æ³•æ£€æŸ¥
+Plugin 'kshenoy/vim-signature'            "-- å¿«é€Ÿæ ‡è®°è·³è½¬ æ— ç¼–è¾‘
+Plugin 'terryma/vim-multiple-cursors'     "-- å¤šå…‰æ ‡æ“ä½œ
+Plugin 'junegunn/vim-easy-align'          "-- EASY-ALIGN[å¿«é€Ÿå¯¹é½]
+Plugin 'vim-scripts/matchit.zip'          "-- MATCHIT[æˆå¯¹æ ‡ç­¾è·³è½¬]  æ— ç¼–è¾‘
+Plugin 'Raimondi/delimitMate'             "-- DELIMITMATE[ç¬¦å·è‡ªåŠ¨è¡¥å…¨]
+Plugin 'kien/rainbow_parentheses.vim'  "-- æ‹¬å·é«˜äº®
+Plugin 'scrooloose/nerdtree'             "-- ç›®å½•æ ‘
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
-Plugin 'rking/ag.vim'                "-- ¿ÉÒÔ¿ìËÙÅúÁ¿ËÑË÷´úÂë£¬ËÑË÷ÎÄ¼ş, Ä£ºıÆ¥Åä, ÕıÔò±í´ïÊ½,´îÅäctrlp
-Plugin 'Lokaltog/vim-easymotion'     "-- Ìø×ª
+Plugin 'rking/ag.vim'                "-- å¯ä»¥å¿«é€Ÿæ‰¹é‡æœç´¢ä»£ç ï¼Œæœç´¢æ–‡ä»¶, æ¨¡ç³ŠåŒ¹é…, æ­£åˆ™è¡¨è¾¾å¼,æ­é…ctrlp
+Plugin 'Lokaltog/vim-easymotion'     "-- è·³è½¬
 "-------------------------------------------------------------------------------------------------
 call vundle#end()            
 filetype plugin indent on 
 
-"_____________________________________--²åÈëÄ£Ê½ÏÂÍË¸ñ¼ü²»ºÃÓÃÊ±
-set nocompatible  "È¥VIµÄ¼æÈİ
+"_____________________________________--æ’å…¥æ¨¡å¼ä¸‹é€€æ ¼é”®ä¸å¥½ç”¨æ—¶
+set nocompatible  "å»VIçš„å…¼å®¹
 set backspace=indent,eol,start
 "-------------------------------------
-set guifont=Anonymice_Powerline:h14:cANSI:qDRAFT "×ÖÌå
+set guifont=Anonymice_Powerline:h14:cANSI:qDRAFT "å­—ä½“
 
 syntax on
 let g:molokai_original = 1
@@ -72,7 +73,7 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 set background=dark 
 colorscheme molokai
-"-----------------------------------------------------ctrlÉèÖÃ
+"-----------------------------------------------------ctrlè®¾ç½®
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_cmd = 'CtrlP'
 map <leader>f :CtrlPMRU<CR>
@@ -86,24 +87,24 @@ let g:ctrlp_max_height=15
 let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
-"-------------------------------------------------------ctrlp-funkyÉèÖÃ
+"-------------------------------------------------------ctrlp-funkyè®¾ç½®
 nnoremap <Leader>fu :CtrlPFunky<Cr>
 " narrow the list down with a word under cursor
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 let g:ctrlp_funky_syntax_highlight = 1
 
 let g:ctrlp_extensions = ['funky']
-"------------------------------------------------------------------------------------ NERDCOMMENTER×¢ÊÍ
+"------------------------------------------------------------------------------------ NERDCOMMENTERæ³¨é‡Š
 let g:NERDSpaceDelims=1
 "-------------------------------------------------------------------------------------TRAILING-WHITESPACE
-map <leader><space> :FixWhitespace<cr>  "Ò»¼üÈ¥³ıËùÓĞ¿Õ¸ñ
+map <leader><space> :FixWhitespace<cr>  "ä¸€é”®å»é™¤æ‰€æœ‰ç©ºæ ¼
 "-------------------------------------------------------------------------------------emmet-vim
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 let g:user_emmet_mode='n'    "only enable normal mode functions.
 let g:user_emmet_mode='inv'  "enable all functions, which is equal to
 let g:user_emmet_mode='a'    "enable all function in all mode.
-"---------------------------------------------------------------------------------------QUICKRUN¿ìËÙÖ´ĞĞ
+"---------------------------------------------------------------------------------------QUICKRUNå¿«é€Ÿæ‰§è¡Œ
 let g:quickrun_config = {
 \   "_" : {
 \       "outputter" : "message",
@@ -113,33 +114,33 @@ let g:quickrun_config = {
 let g:quickrun_no_default_key_mappings = 1
 nmap <Leader>r <Plug>(quickrun)
 map <F10> :QuickRun<CR>
-"-----------------------------------------------------------------------------------CLOSETAG³É¶Ô±êÇ©²¹È«
+"-----------------------------------------------------------------------------------CLOSETAGæˆå¯¹æ ‡ç­¾è¡¥å…¨
 let g:closetag_html_style=1
 "-----------------------------------------------------------------------------------EXPAND-REGION
 vmap v <Plug>(expand_region_expand)
 vmap V <Plug>(expand_region_shrink)
-"-----------------------------------------------------------------------------------Óï·¨¼ì²é]
+"-----------------------------------------------------------------------------------è¯­æ³•æ£€æŸ¥]
 
-"--------------------------------------------------------------------MULTIPLE-CURSORS[¶à¹â±ê²Ù×÷]
+"--------------------------------------------------------------------MULTIPLE-CURSORS[å¤šå…‰æ ‡æ“ä½œ]
 let g:multi_cursor_use_default_mapping=0
 " Default mapping
 let g:multi_cursor_next_key='<C-m>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
-"--------------------------------------------------------------------EASY-ALIGN[¿ìËÙ¶ÔÆë]
+"--------------------------------------------------------------------EASY-ALIGN[å¿«é€Ÿå¯¹é½]
 vmap <Leader>a <Plug>(EasyAlign)
 nmap <Leader>a <Plug>(EasyAlign)
 if !exists('g:easy_align_delimiters')
   let g:easy_align_delimiters = {}
 endif
 let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String'] }
-"--------------------------------------------------------------------- DELIMITMATE[·ûºÅ×Ô¶¯²¹È«]
-" for python docstring ", ÌØ±ğÓĞÓÃ
+"--------------------------------------------------------------------- DELIMITMATE[ç¬¦å·è‡ªåŠ¨è¡¥å…¨]
+" for python docstring ", ç‰¹åˆ«æœ‰ç”¨
 au FileType python let b:delimitMate_nesting_quotes = ['"']
-" ¹Ø±ÕÄ³Ğ©ÀàĞÍÎÄ¼şµÄ×Ô¶¯²¹È«
+" å…³é—­æŸäº›ç±»å‹æ–‡ä»¶çš„è‡ªåŠ¨è¡¥å…¨
 "au FileType mail let b:delimitMate_autoclose = 0
-"----------------------------------------------------------------------À¨ºÅ¸ßÁÁ
+"----------------------------------------------------------------------æ‹¬å·é«˜äº®
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
     \ ['Darkblue',    'SeaGreen3'],
@@ -158,7 +159,7 @@ let g:rbpt_colorpairs = [
     \ ['red',         'firebrick3'],
     \ ]
 
-" ²»¼ÓÈëÕâĞĞ, ·ÀÖ¹ºÚÉ«À¨ºÅ³öÏÖ, ºÜÄÑÊ¶±ğ
+" ä¸åŠ å…¥è¿™è¡Œ, é˜²æ­¢é»‘è‰²æ‹¬å·å‡ºç°, å¾ˆéš¾è¯†åˆ«
 " \ ['black',       'SeaGreen3'],
 
 let g:rbpt_max = 16
@@ -167,25 +168,25 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-"-------------------------------------------------------------------------Ä¿Â¼Ê÷
-" ÅäÖÃF2¿ì½İ¼ü¿ªÆô
+"-------------------------------------------------------------------------ç›®å½•æ ‘
+" é…ç½®F2å¿«æ·é”®å¼€å¯
 map <F2> :NERDTreeToggle<CR>
-" ÔÚ vim Æô¶¯µÄÊ±ºòÄ¬ÈÏ¿ªÆô NERDTree£¨autocmd ¿ÉÒÔËõĞ´Îª au£© autocmd VimEnter * NERDTree
+" åœ¨ vim å¯åŠ¨çš„æ—¶å€™é»˜è®¤å¼€å¯ NERDTreeï¼ˆautocmd å¯ä»¥ç¼©å†™ä¸º auï¼‰ autocmd VimEnter * NERDTree
 
-" ½« NERDTree µÄ´°¿ÚÉèÖÃÔÚ vim ´°¿ÚµÄÓÒ²à£¨Ä¬ÈÏÎª×ó²à£© let NERDTreeWinPos="right"
+" å°† NERDTree çš„çª—å£è®¾ç½®åœ¨ vim çª—å£çš„å³ä¾§ï¼ˆé»˜è®¤ä¸ºå·¦ä¾§ï¼‰ let NERDTreeWinPos="right"
 
-" µ±´ò¿ª NERDTree ´°¿ÚÊ±£¬×Ô¶¯ÏÔÊ¾ Bookmarks let NERDTreeShowBookmarks=1
+" å½“æ‰“å¼€ NERDTree çª—å£æ—¶ï¼Œè‡ªåŠ¨æ˜¾ç¤º Bookmarks let NERDTreeShowBookmarks=1
 "------------------------------------------------------------------govo
-"<Leader>l´¥·¢limelight¹¦ÄÜ
+"<Leader>lè§¦å‘limelightåŠŸèƒ½
 nmap <Leader>l :Goyo<CR>
 xmap <Leader>l :Goyo<CR>
-"---------------------------------------------------------------- Ìø×ª
+"---------------------------------------------------------------- è·³è½¬
 let g:EasyMotion_smartcase = 1
 "let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 map <Leader><leader>h <Plug>(easymotion-linebackward)
 map <Leader><Leader>j <Plug>(easymotion-j)
 map <Leader><Leader>k <Plug>(easymotion-k)
 map <Leader><leader>l <Plug>(easymotion-lineforward)
-" ÖØ¸´ÉÏÒ»´Î²Ù×÷, ÀàËÆrepeat²å¼ş, ºÜÇ¿´ó
+" é‡å¤ä¸Šä¸€æ¬¡æ“ä½œ, ç±»ä¼¼repeatæ’ä»¶, å¾ˆå¼ºå¤§
 map <Leader><leader>. <Plug>(easymotion-repeat)
 
