@@ -72,7 +72,7 @@ let g:molokai_original = 1
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 set background=dark 
-colorscheme molokai
+colorscheme solarized
 "-----------------------------------------------------ctrl设置
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_cmd = 'CtrlP'
