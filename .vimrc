@@ -1,6 +1,6 @@
+set guifont=Courier\10\Pitch\ 15 
 set number 
 set numberwidth=2
-"au GUIEnter * call libcallnr("vimtweak.dll", "SetAlpha", 200)   "自动透明
 set ts=4
 set expandtab 
 set encoding=utf-8
@@ -8,6 +8,8 @@ set langmenu=zh_CN.UTF-8
 " 设置打开文件的编码格式  
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1 
 set fileencoding=utf-8
+set cul
+set ruler
 "------------------------------------------------------------------------------------airline状态栏
 "解决菜单乱码
 source $VIMRUNTIME/delmenu.vim
@@ -38,14 +40,12 @@ Plugin 'bling/vim-airline'                "-- 状态栏插件
 Plugin 'altercation/vim-colors-solarized' "-- 颜色主题
 Plugin 'tomasr/molokai'                   "-- 颜色主题
 Plugin 'ctrlpvim/ctrlp.vim'               "-- CTRLP[文件搜索]
-Plugin 'tacahiroy/ctrlp-funky'            "-- 模糊搜索当前文件中所有函数
 Plugin 'scrooloose/nerdcommenter'         "-- 快速高效注释
 Plugin 'mattn/emmet-vim.git'              "-- 写HTML插件
 Plugin 'bronson/vim-trailing-whitespace'  "-- TRAILING-WHITESPACE[行尾空格处理]
 Plugin 'thinca/vim-quickrun'              "-- QUICKRUN[快速执行]
 Plugin 'docunext/closetag.vim'            "-- CLOSETAG[成对标签补全]
 Plugin 'terryma/vim-expand-region'        "-- 视图模式下可伸缩选中部分，用于快速选中某些块
-Plugin 'w0rp/ale'                         "-- 语法检查
 Plugin 'kshenoy/vim-signature'            "-- 快速标记跳转 无编辑
 Plugin 'terryma/vim-multiple-cursors'     "-- 多光标操作
 Plugin 'junegunn/vim-easy-align'          "-- EASY-ALIGN[快速对齐]
@@ -53,9 +53,6 @@ Plugin 'vim-scripts/matchit.zip'          "-- MATCHIT[成对标签跳转]  无�
 Plugin 'Raimondi/delimitMate'             "-- DELIMITMATE[符号自动补全]
 Plugin 'kien/rainbow_parentheses.vim'  "-- 括号高亮
 Plugin 'scrooloose/nerdtree'             "-- 目录树
-Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/limelight.vim'
-Plugin 'rking/ag.vim'                "-- 可以快速批量搜索代码，搜索文件, 模糊匹配, 正则表达式,搭配ctrlp
 Plugin 'Lokaltog/vim-easymotion'     "-- 跳转
 "-------------------------------------------------------------------------------------------------
 call vundle#end()            
@@ -65,7 +62,6 @@ filetype plugin indent on
 set nocompatible  "去VI的兼容
 set backspace=indent,eol,start
 "-------------------------------------
-set guifont=Anonymice_Powerline:h14:cANSI:qDRAFT "字体
 
 syntax on
 let g:molokai_original = 1
@@ -87,13 +83,6 @@ let g:ctrlp_max_height=15
 let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
-"-------------------------------------------------------ctrlp-funky设置
-nnoremap <Leader>fu :CtrlPFunky<Cr>
-" narrow the list down with a word under cursor
-nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
-let g:ctrlp_funky_syntax_highlight = 1
-
-let g:ctrlp_extensions = ['funky']
 "------------------------------------------------------------------------------------ NERDCOMMENTER注释
 let g:NERDSpaceDelims=1
 "-------------------------------------------------------------------------------------TRAILING-WHITESPACE
@@ -189,4 +178,6 @@ map <Leader><Leader>k <Plug>(easymotion-k)
 map <Leader><leader>l <Plug>(easymotion-lineforward)
 " 重复上一次操作, 类似repeat插件, 很强大
 map <Leader><leader>. <Plug>(easymotion-repeat)
+"---------------------------------------------------------------
+
 
