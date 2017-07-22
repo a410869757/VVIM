@@ -65,7 +65,7 @@ Plugin 'vim-airline/vim-airline-themes'   "__ airline的色彩插件
 Plugin 'tpope/vim-repeat'                 "__ 重复插件操作
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'majutsushi/tagbar'                "__ 大纲导航
-Plugin 'mbbill/undotree'
+Plugin 'mbbill/undotree'                  “—— 时光机
 call vundle#end()
 filetype plugin indent on
 
@@ -259,7 +259,7 @@ let g:tagbar_type_ruby = {
         \ 'F:singleton methods'
     \ ]
 \ }
-"-------------------------------------
+"-------------------------------------时光机
 nnoremap <F6> :UndotreeToggle<cr>
 set undodir=~/.undodir/
 set undofile
