@@ -1,3 +1,5 @@
+
+
 "基础配置
 set tags=tags; "ctags
 set autochdir  "ctags
@@ -65,7 +67,7 @@ Plugin 'vim-airline/vim-airline-themes'   "__ airline的色彩插件
 Plugin 'tpope/vim-repeat'                 "__ 重复插件操作
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'majutsushi/tagbar'                "__ 大纲导航
-Plugin 'mbbill/undotree'                  “—— 时光机
+Plugin 'mbbill/undotree'                  "-- 时光机
 call vundle#end()
 filetype plugin indent on
 
@@ -93,12 +95,14 @@ let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
 
 "--------------------------------------------------------------------funky
-"nnoremap <Leader>fu :CtrlPFunky<Cr>
+nnoremap <Leader>fu :CtrlPFunky<Cr>
 " narrow the list down with a word under cursor
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 let g:ctrlp_funky_syntax_highlight = 1
 
 let g:ctrlp_extensions = ['funky']
+
+
 "--------------------------------------------------------------------------------- NERDCOMMENTER注释
 let g:NERDSpaceDelims=1
 
@@ -209,6 +213,9 @@ map <Leader><leader>l <Plug>(easymotion-lineforward)
 map <Leader><leader>. <Plug>(easymotion-repeat)
 "----------------------------------------------------------------------------------文本补全
 let g:SuperTabRetainCompletionType=2
+
+
+
 "----------------------------------------------------------------------------------themes
 let g:airline_theme='molokai'
 " badwolf 和dark差不多
@@ -259,7 +266,7 @@ let g:tagbar_type_ruby = {
         \ 'F:singleton methods'
     \ ]
 \ }
-"-------------------------------------时光机
+"------------------------------------- 时光机
 nnoremap <F6> :UndotreeToggle<cr>
 set undodir=~/.undodir/
 set undofile
