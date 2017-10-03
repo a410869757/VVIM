@@ -67,6 +67,9 @@ Plugin 'vim-airline/vim-airline-themes'   "__ airline的色彩插件
 Plugin 'tpope/vim-repeat'                 "__ 重复插件操作
 Plugin 'mbbill/undotree'                  "-- 时光机
 Plugin 'tpope/vim-surround'               “-- 成对符号编辑
+Plugin 'junegunn/limelight.vim'           “-- 写作
+Plugin 'junegunn/goyo.vim'                “-- 关灯
+
 call vundle#end()
 filetype plugin indent on
 
@@ -254,3 +257,12 @@ let g:airline_theme='molokai'
 nnoremap <F6> :UndotreeToggle<cr>
 set undodir=~/.undodir/
 set undofile
+"------------------------------------- goyo 配置
+"limelight
+"<Leader>l触发limelight功能
+nmap <Leader>l :Goyo<CR>
+xmap <Leader>l :Goyo<CR>
+"进入goyo模式后自动触发limelight,退出后则关闭
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+"-----------------------------------------------
