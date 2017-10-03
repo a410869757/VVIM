@@ -47,7 +47,6 @@ Plugin 'VundleVim/Vundle.vim'             "-- 插件管理
 Plugin 'bling/vim-airline'                "-- 状态栏插件
 Plugin 'altercation/vim-colors-solarized' "-- 颜色主题
 Plugin 'tomasr/molokai'                   "-- 颜色主题
-Plugin 'ctrlpvim/ctrlp.vim'               "-- CTRLP[文件搜索]
 Plugin 'scrooloose/nerdcommenter'         "-- 快速高效注释
 Plugin 'mattn/emmet-vim.git'              "-- 写HTML插件
 Plugin 'bronson/vim-trailing-whitespace'  "-- TRAILING-WHITESPACE[行尾空格处理]
@@ -64,6 +63,7 @@ Plugin 'scrooloose/nerdtree'              "-- 目录树
 Plugin 'Lokaltog/vim-easymotion'          "-- 跳转
 Plugin 'SuperTab'                         "__  文本补全
 Plugin 'vim-airline/vim-airline-themes'   "__ airline的色彩插件
+Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'                 "__ 重复插件操作
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'mbbill/undotree'                  "-- 时光机
