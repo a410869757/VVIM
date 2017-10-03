@@ -69,6 +69,8 @@ Plugin 'mbbill/undotree'                  "-- 时光机
 Plugin 'tpope/vim-surround'               “-- 成对符号编辑
 Plugin 'junegunn/limelight.vim'           “-- 写作
 Plugin 'junegunn/goyo.vim'                “-- 关灯
+Plugin 'mhinz/vim-startify'               ”-- 启动界面
+Plugin 'haya14busa/incsearch.vim'         “-- 强化搜索
 
 call vundle#end()
 filetype plugin indent on
@@ -266,3 +268,31 @@ xmap <Leader>l :Goyo<CR>
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 "-----------------------------------------------
+"-----------------------------------------------
+"" 设置书签
+let g:startify_bookmarks            = [
+            \ '~/Code/blog/startify/1.txt',
+            \ '~/Code/blog/startify/2.txt',
+            \]
+
+" 起始页显示的列表长度
+let g:startify_files_number = 20
+
+" 是否自动加载目录下的Session.vim, 很好用
+let g:startify_session_autoload = 1
+
+" 过滤列表，支持正则表达式
+let g:startify_skiplist = [
+       \ '\.vimgolf',
+       \ '^/tmp',
+       \ '/project/.*/documentation',
+       \ ]
+"-----------------------------------------------
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
