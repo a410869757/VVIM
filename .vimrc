@@ -36,7 +36,7 @@ let g:airline#extensions#tabline#buffer_idx_mode = 1
 nnoremap [b :bp<CR>
 nnoremap ]b :bn<CR>
 
-"___________________________________________________________________________________
+"__________________________________________________________________________________
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -66,7 +66,6 @@ Plugin 'SuperTab'                         "__  文本补全
 Plugin 'vim-airline/vim-airline-themes'   "__ airline的色彩插件
 Plugin 'tpope/vim-repeat'                 "__ 重复插件操作
 Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'majutsushi/tagbar'                "__ 大纲导航
 Plugin 'mbbill/undotree'                  "-- 时光机
 call vundle#end()
 filetype plugin indent on
@@ -250,22 +249,7 @@ let g:airline_theme='molokai'
 " 30 understated
 " 31 wombat 亮黄
 " 32 zenburn 蓝，橙
-"------------------------------------------ 大纲导航
-nmap <F9> :TagbarToggle<CR>
-" 启动时自动focus
-let g:tagbar_autofocus = 1
 
-" for ruby, delete if you do not need
-let g:tagbar_type_ruby = {
-    \ 'kinds' : [
-        \ 'm:modules',
-        \ 'c:classes',
-        \ 'd:describes',
-        \ 'C:contexts',
-        \ 'f:methods',
-        \ 'F:singleton methods'
-    \ ]
-\ }
 "------------------------------------- 时光机
 nnoremap <F6> :UndotreeToggle<cr>
 set undodir=~/.undodir/
