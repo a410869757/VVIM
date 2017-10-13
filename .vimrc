@@ -1,5 +1,4 @@
 
-
 "基础配置
 set tags=tags; "ctags
 set autochdir  "ctags
@@ -62,15 +61,15 @@ Plugin 'Raimondi/delimitMate'             "-- DELIMITMATE[符号自动补全]
 Plugin 'kien/rainbow_parentheses.vim'     "-- 括号高亮
 Plugin 'scrooloose/nerdtree'              "-- 目录树
 Plugin 'Lokaltog/vim-easymotion'          "-- 跳转
-Plugin 'SuperTab'                         "__  文本补全
-Plugin 'vim-airline/vim-airline-themes'   "__ airline的色彩插件
-Plugin 'tpope/vim-repeat'                 "__ 重复插件操作
+Plugin 'SuperTab'                         "-- 文本补全
+Plugin 'vim-airline/vim-airline-themes'   "--  airline的色彩插件
+Plugin 'tpope/vim-repeat'                 "--  重复插件操作
 Plugin 'mbbill/undotree'                  "-- 时光机
-Plugin 'tpope/vim-surround'               “-- 成对符号编辑
-Plugin 'junegunn/limelight.vim'           “-- 写作
-Plugin 'junegunn/goyo.vim'                “-- 关灯
-Plugin 'mhinz/vim-startify'               ”-- 启动界面
-Plugin 'haya14busa/incsearch.vim'         “-- 强化搜索
+Plugin 'tpope/vim-surround'               "-- 成对符号编辑
+Plugin 'junegunn/limelight.vim'           "-- 写作
+Plugin 'junegunn/goyo.vim'                "-- 关灯
+Plugin 'mhinz/vim-startify'               "-- 启动界面
+
 
 call vundle#end()
 filetype plugin indent on
@@ -269,7 +268,7 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 "-----------------------------------------------
 "-----------------------------------------------
-"" 设置书签
+
 let g:startify_bookmarks            = [
             \ '~/Code/blog/startify/1.txt',
             \ '~/Code/blog/startify/2.txt',
@@ -287,12 +286,17 @@ let g:startify_skiplist = [
        \ '^/tmp',
        \ '/project/.*/documentation',
        \ ]
+let g:startify_custom_header = [
+            \ '+------------------------------+',
+            \ '|  Welcome to my blog.         |',
+            \ '|                              |',
+            \ '|  http://hackers-delight.com/ |',
+            \ '+----------------+-------------+',
+            \]
+
+let g:startify_custom_footer = [
+            \ '+------------------------------+',
+            \ '|  1.01 ^ 365 =  37.78         |',
+            \ '+----------------+-------------+',
+            \]
 "-----------------------------------------------
-set hlsearch
-let g:incsearch#auto_nohlsearch = 1
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
