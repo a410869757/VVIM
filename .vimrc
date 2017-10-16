@@ -1,3 +1,9 @@
+"git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+安装
+":PluginInstall 
+" PluginInstall <plugin-name> 
+清理闲置插件
+:PluginClean 
 
 "基础配置
 set tags=tags; "ctags
